@@ -1,4 +1,4 @@
-# VygotEA — Replication Package
+# VygotEA — Evaluation
 
 ## Requirements
 Python 3.10+, scikit-learn 1.4, faiss-cpu 1.7
