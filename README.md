@@ -11,4 +11,3 @@ Python 3.10+, scikit-learn 1.4, faiss-cpu 1.7
 ## Files
 - `vygotea_config.json`: all experimental parameters
 - `VygotEA_notebook_v3.ipynb`: full evaluation pipeline
-- `figuras/`: publication-ready figures (PDF + PNG)
