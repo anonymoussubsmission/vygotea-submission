@@ -1,0 +1,195 @@
+{
+  "_comment": "VygotEA submitted on BRACIS 2026",
+
+  "simulation": {
+    "seed": 42,
+    "n_train": 800,
+    "n_test": 200,
+    "n_pilot": 25,
+    "alpha_smoothing": 0.3,
+    "satisfaction_mu": 4.26,
+    "satisfaction_sigma": 0.38
+  },
+
+  "emotion_distribution": {
+    "anxiety":     0.269,
+    "frustration": 0.224,
+    "calm":        0.208,
+    "sadness":     0.150,
+    "joy":         0.091,
+    "fear":        0.058
+  },
+
+  "student_profiles": {
+    "P1": {
+      "h": 3, "a": 2, "c": 4,
+      "n": "intermediate",
+      "e": 15,
+      "characteristics": ["high_social_anxiety", "sensory_sensitivity", "restricted_interest_technology"],
+      "description": "Student with high social anxiety and restricted interest in technology"
+    },
+    "P2": {
+      "h": 4, "a": 3, "c": 5,
+      "n": "advanced",
+      "e": 16,
+      "characteristics": ["perfectionism", "low_tolerance_routine_change", "good_memory"],
+      "description": "Student with marked perfectionism and low tolerance for routine changes"
+    },
+    "P3": {
+      "h": 2, "a": 2, "c": 2,
+      "n": "initial",
+      "e": 14,
+      "characteristics": ["expressive_difficulty", "sensory_sensitivity_noise", "repetitive_behavior"],
+      "description": "Student with expressive difficulties and sensory sensitivity"
+    },
+    "P4": {
+      "h": 3, "a": 4, "c": 4,
+      "n": "advanced",
+      "e": 17,
+      "characteristics": ["high_performance", "interest_science", "difficulty_social_interpretation"],
+      "description": "High-performing student with interest in science"
+    },
+    "P5": {
+      "h": 3, "a": 3, "c": 3,
+      "n": "intermediate",
+      "e": 15,
+      "characteristics": ["performance_anxiety", "rigid_routines", "interest_art"],
+      "description": "Student with performance anxiety and dependence on rigid routines"
+    }
+  },
+
+  "school_situations": [
+    "exam_approaching", "peer_conflict", "routine_change", "public_presentation",
+    "excessive_noise", "difficult_task", "alone_at_recess", "teacher_praise",
+    "work_criticism", "group_activity", "rainy_day", "substitute_teacher"
+  ],
+
+  "situation_emotion_map": {
+    "exam_approaching":    "anxiety",
+    "peer_conflict":       "frustration",
+    "routine_change":      "anxiety",
+    "public_presentation": "fear",
+    "excessive_noise":     "frustration",
+    "difficult_task":      "frustration",
+    "alone_at_recess":     "sadness",
+    "teacher_praise":      "joy",
+    "work_criticism":      "sadness",
+    "group_activity":      "anxiety",
+    "rainy_day":           "calm",
+    "substitute_teacher":  "anxiety"
+  },
+
+  "mediation_strategies": {
+    "anxiety":     { "initial": "emotional_support_guided_breathing",  "intermediate": "self_regulation_gradual_steps",       "advanced": "cognitive_restructuring" },
+    "frustration": { "initial": "emotional_support_validation",        "intermediate": "guided_problem_solving",               "advanced": "cognitive_restructuring" },
+    "sadness":     { "initial": "emotional_support_active_listening",  "intermediate": "behavioral_activation",                "advanced": "engagement_meaningful_activity" },
+    "joy":         { "initial": "positive_reinforcement_expansion",    "intermediate": "positive_reinforcement_expansion",     "advanced": "positive_reinforcement_expansion" },
+    "fear":        { "initial": "emotional_support_desensitization",   "intermediate": "behavioral_rehearsal",                 "advanced": "gradual_exposure_plan" },
+    "calm":        { "initial": "guided_practice_incremental_challenge","intermediate": "guided_practice_incremental_challenge","advanced": "guided_practice_incremental_challenge" }
+  },
+
+  "adaptive_responses": {
+    "anxiety": {
+      "initial":      "I can see you are worried. Let us try breathing together, step by step.",
+      "intermediate": "I understand your anxiety. How about we use a self-regulation technique?",
+      "advanced":     "I recognise your anxious feelings. Let us develop personalised coping strategies."
+    },
+    "frustration": {
+      "initial":      "I see you are upset. Let us talk about it together.",
+      "intermediate": "Your frustration is understandable. Let us find a solution together.",
+      "advanced":     "I understand your frustration. Let us analyse the situation and build adaptive strategies."
+    },
+    "sadness": {
+      "initial":      "I can see you are sad. I am here to help.",
+      "intermediate": "I understand you are feeling sad. Let us talk about what might help.",
+      "advanced":     "I sense your sadness. Let us explore appropriate emotional regulation strategies."
+    },
+    "joy": {
+      "initial":      "Great to know you are happy! Tell me more.",
+      "intermediate": "Your joy is contagious! How can we keep this feeling going?",
+      "advanced":     "Wonderful to know you are joyful! Let us channel this positive energy."
+    },
+    "fear": {
+      "initial":      "I understand you are afraid. Let us face this together.",
+      "intermediate": "Your fears are valid. Let us work on strategies to feel safer.",
+      "advanced":     "I understand your fears. Let us build a gradual exposure plan."
+    },
+    "calm": {
+      "initial":      "Great that you are calm! Let us take advantage of this moment.",
+      "intermediate": "Your tranquillity is admirable. How did you achieve this calmness?",
+      "advanced":     "Excellent state of balance! Let us consolidate these self-regulation strategies."
+    }
+  },
+
+  "confidence_mu": {
+    "anxiety": 0.51, "frustration": 0.58, "sadness": 0.55,
+    "joy": 0.37, "fear": 0.45, "calm": 0.60
+  },
+
+  "keyword_dict": {
+    "anxiety":     ["nervous","worried","anxious","tense","restless","apprehensive","uneasy","stressed","panic","overwhelmed","nervoso","ansioso","preocupado","tenso","inquieto","apreensivo","estressado","angustiado","perturbado","aflito"],
+    "frustration": ["frustrated","irritated","upset","annoyed","impatient","angry","disappointed","aggravated","exasperated","resentful","frustrado","irritado","chateado","impaciente","zangado","desapontado","bravo","indignado","revoltado","aborrecido"],
+    "sadness":     ["sad","dejected","downcast","melancholic","disheartened","unhappy","depressed","miserable","sorrowful","tearful","triste","desanimado","melancólico","abatido","deprimido","infeliz","lamentoso","entristecido","magoado","sofrendo"],
+    "joy":         ["happy","joyful","excited","content","elated","pleased","cheerful","delighted","thrilled","satisfied","feliz","animado","contente","eufórico","satisfeito","alegre","radiante","entusiasmado","encantado","realizado"],
+    "fear":        ["scared","afraid","fearful","terrified","insecure","wary","dread","frightened","timid","phobic","assustado","com medo","temeroso","inseguro","receoso","aterrorizado","amedrontado","apavorado","medroso","tímido"],
+    "calm":        ["calm","tranquil","peaceful","relaxed","serene","composed","balanced","quiet","settled","steady","tranquilo","sereno","relaxado","pacífico","equilibrado","sossegado","calmo","estável","descansado","confortável"]
+  },
+
+  "templates_train": {
+    "anxiety":     ["I am very anxious about the {s}, I don't know what to do.", "I can't stop thinking about the {s}.", "I feel very nervous and worried about {s}.", "The {s} is making me extremely tense.", "I am apprehensive about the {s} tomorrow."],
+    "frustration": ["I am really upset because of the {s}.", "This {s} is incredibly difficult, I feel irritated.", "I can't handle the {s} anymore, I'm so frustrated.", "The {s} is making me very impatient.", "I'm annoyed and disappointed with the {s}."],
+    "sadness":     ["I feel sad today because of the {s}.", "The {s} left me feeling downcast and melancholic.", "I am not well today, the {s} made me very sad.", "I feel disheartened after the {s}.", "The {s} has really upset me, I feel tearful."],
+    "joy":         ["I am so happy about the {s}!", "The {s} made me feel really excited and content!", "I'm thrilled and satisfied with the {s}!", "What a great day! The {s} made me very cheerful.", "I feel joyful and elated because of the {s}!"],
+    "fear":        ["I am scared about the {s}.", "The {s} makes me feel terrified.", "I'm very fearful and insecure about the {s}.", "The thought of the {s} fills me with dread.", "I feel frightened and timid about the {s}."],
+    "calm":        ["I feel really calm and peaceful about the {s}.", "The {s} left me feeling tranquil and balanced.", "I'm relaxed and composed about the {s}.", "I feel serene and settled regarding the {s}.", "The {s} has me feeling very quiet and steady."]
+  },
+
+  "templates_test": {
+    "anxiety":     ["The {s} has me feeling really on edge.", "I keep worrying about the {s} and can't relax.", "My heart races when I think about the {s}.", "I feel overwhelmed and stressed about the {s}.", "The upcoming {s} fills me with unease."],
+    "frustration": ["The {s} drives me absolutely crazy.", "I am fed up with the {s}, it never works out.", "Dealing with the {s} makes me so resentful.", "The {s} is infuriating and I can't take it.", "I feel exasperated every time I face the {s}."],
+    "sadness":     ["The {s} broke my heart a little today.", "After the {s} I felt like crying all afternoon.", "I've been miserable since the {s} happened.", "The {s} drained all my energy and left me down.", "I feel so low after going through the {s}."],
+    "joy":         ["The {s} made my whole day brighter!", "I couldn't stop smiling because of the {s}.", "The {s} gave me such a wonderful feeling of satisfaction.", "I feel on top of the world after the {s}!", "Such a great vibe came from the {s} today."],
+    "fear":        ["The {s} sends chills down my spine.", "I panic just thinking about having to face the {s}.", "I'm petrified whenever the {s} comes up.", "The {s} makes me want to run away and hide.", "I feel paralysed with fear about the {s}."],
+    "calm":        ["I handled the {s} with complete composure today.", "The {s} passed smoothly and I feel at ease.", "Everything about the {s} felt manageable and calm.", "I am at peace after the {s} — no worries at all.", "The {s} went well and I feel grounded and stable."]
+  },
+
+  "specialist_rubric": {
+    "interactions": [
+      {"id": "Int 1 (Anxiety)",            "emot_id": 4.3, "zpd_adapt": 4.0, "se_dev": 4.3, "applicab": 4.7, "note": "explicit anxiety, exam context"},
+      {"id": "Int 2 (Explicit frustration)","emot_id": 3.7, "zpd_adapt": 4.3, "se_dev": 3.7, "applicab": 4.0, "note": "matches Int 2 from paper Table 6"},
+      {"id": "Int 3 (Implicit frustration)","emot_id": 3.0, "zpd_adapt": 3.7, "se_dev": 3.7, "applicab": 3.7, "note": "implicit frustration via sensory overload"},
+      {"id": "Int 4 (Joy)",                "emot_id": 4.0, "zpd_adapt": 3.7, "se_dev": 4.0, "applicab": 4.3, "note": "matches Int 4 from paper Table 6"},
+      {"id": "Int 5 (Anxiety)",            "emot_id": 4.0, "zpd_adapt": 4.0, "se_dev": 4.3, "applicab": 4.3, "note": "social anxiety, performance context"}
+    ],
+    "kendall_w": 0.74,
+    "kendall_p": 0.05
+  },
+
+  "pilot_data": [
+    {"id":"R01","text":"Estou muito ansioso com a prova de amanhã, não consigo estudar direito.","label":"anxiety","zdp":"initial","profile":"P3","note":"explicit anxiety, exam context"},
+    {"id":"R02","text":"Fico nervoso quando tem apresentação na frente da turma, trava tudo.","label":"anxiety","zdp":"intermediate","profile":"P5","note":"social anxiety, performance context"},
+    {"id":"R03","text":"Mudaram o horário sem avisar, agora não sei mais o que fazer.","label":"anxiety","zdp":"initial","profile":"P3","note":"routine disruption, implicit anxiety"},
+    {"id":"R04","text":"O projeto em grupo me deixa muito tenso, não sei como falar com eles.","label":"anxiety","zdp":"intermediate","profile":"P1","note":"matches Int 1 from paper Table 6"},
+    {"id":"R05","text":"Tenho medo de errar e todo mundo rir de mim na apresentação.","label":"fear","zdp":"intermediate","profile":"P5","note":"fear of public judgment"},
+    {"id":"R06","text":"Não aguento mais o barulho do recreio, preciso sair daqui.","label":"frustration","zdp":"initial","profile":"P3","note":"Int 3 — implicit frustration via sensory overload"},
+    {"id":"R07","text":"Achei que ia conseguir, mas a prova foi muito difícil.","label":"sadness","zdp":"intermediate","profile":"P2","note":"post-failure sadness"},
+    {"id":"R08","text":"Mudaram a data da prova e eu tinha me organizado perfeitamente.","label":"frustration","zdp":"advanced","profile":"P2","note":"matches Int 2 from paper Table 6"},
+    {"id":"R09","text":"Ninguém me explica direito, fico perdido e irritado.","label":"frustration","zdp":"initial","profile":"P3","note":"communication breakdown frustration"},
+    {"id":"R10","text":"Tentei três vezes e o exercício continua errado, que raiva.","label":"frustration","zdp":"intermediate","profile":"P4","note":"task difficulty frustration"},
+    {"id":"R11","text":"O colega ficou mexendo nas minhas coisas sem pedir, me irritei muito.","label":"frustration","zdp":"intermediate","profile":"P1","note":"peer conflict frustration"},
+    {"id":"R12","text":"Professor substituto não segue a rotina, detestei a aula hoje.","label":"frustration","zdp":"initial","profile":"P3","note":"routine change with explicit negative emotion"},
+    {"id":"R13","text":"Não entendo por que mudam tudo de repente, fico estressado.","label":"frustration","zdp":"intermediate","profile":"P5","note":"change aversion, stress framed as frustration"},
+    {"id":"R14","text":"Fiquei sozinho no recreio de novo, ninguém me chamou.","label":"sadness","zdp":"initial","profile":"P3","note":"social isolation sadness"},
+    {"id":"R15","text":"A professora criticou meu trabalho na frente de todos, fiquei triste.","label":"sadness","zdp":"intermediate","profile":"P1","note":"public criticism sadness"},
+    {"id":"R16","text":"Não me sinto bem hoje, estou desanimado sem motivo aparente.","label":"sadness","zdp":"intermediate","profile":"P5","note":"diffuse sadness, no explicit trigger"},
+    {"id":"R17","text":"Meu projeto foi reprovado, me esforcei muito e não valeu.","label":"sadness","zdp":"advanced","profile":"P4","note":"effort-outcome gap sadness"},
+    {"id":"R18","text":"Meu projeto de ciências foi selecionado para a feira! Estou feliz demais.","label":"joy","zdp":"advanced","profile":"P4","note":"matches Int 4 from paper Table 6"},
+    {"id":"R19","text":"A professora elogiou minha leitura em voz alta, fiquei muito animado.","label":"joy","zdp":"intermediate","profile":"P1","note":"teacher praise joy"},
+    {"id":"R20","text":"Finalmente entendi a matéria que me travava há semanas!","label":"joy","zdp":"advanced","profile":"P2","note":"mastery joy"},
+    {"id":"R21","text":"Hoje foi um dia ótimo, consegui terminar todas as tarefas.","label":"joy","zdp":"intermediate","profile":"P5","note":"task completion satisfaction"},
+    {"id":"R22","text":"Tenho pavor de falar em público, fico travado e vermelho.","label":"fear","zdp":"initial","profile":"P3","note":"public speaking fear, somatic cue"},
+    {"id":"R23","text":"Quando vejo algo inesperado acontecer fico apavorado.","label":"fear","zdp":"intermediate","profile":"P5","note":"unpredictability fear"},
+    {"id":"R24","text":"Hoje estou bem, consegui usar a técnica de respiração antes da aula.","label":"calm","zdp":"intermediate","profile":"P1","note":"regulated calm after strategy use"},
+    {"id":"R25","text":"Me sinto tranquilo, o dia correu bem e nada de inesperado aconteceu.","label":"calm","zdp":"advanced","profile":"P2","note":"baseline calm"}
+  ]
+}
